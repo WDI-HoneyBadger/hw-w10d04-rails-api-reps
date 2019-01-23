@@ -1,0 +1,482 @@
+  [1m[35m (505.4ms)[0m  [1m[35mCREATE DATABASE "quotes_api_development" ENCODING = 'unicode'[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (419.4ms)[0m  [1m[35mCREATE DATABASE "quotes_api_test" ENCODING = 'unicode'[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2072838696152715120)[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuotes (20190123141615)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "quotes" ("id" bigserial primary key, "content" character varying, "author" character varying, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190123141615_create_quotes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190123141615"]]
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-23 14:19:36.672915"], ["updated_at", "2019-01-23 14:19:36.672915"]]
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2072838696152715120)[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nadaabdulkarem/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Sometimes you win, sometimes you learn."], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 14:19:40.966042"], ["updated_at", "2019-01-23 14:19:40.966042"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Do or do not, there is no try."], ["author", "Yoda"], ["category", "motivational"], ["created_at", "2019-01-23 14:19:40.968661"], ["updated_at", "2019-01-23 14:19:40.968661"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A simple 'Hello' could lead to a million things."], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 14:19:40.970463"], ["updated_at", "2019-01-23 14:19:40.970463"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The expert at anything was once a beginner."], ["author", "Helen Hayes"], ["category", "education"], ["created_at", "2019-01-23 14:19:40.971715"], ["updated_at", "2019-01-23 14:19:40.971715"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "You are never too old to get a new goal or dream a new dream!"], ["author", "CS Lewis"], ["category", "motivational"], ["created_at", "2019-01-23 14:19:40.973058"], ["updated_at", "2019-01-23 14:19:40.973058"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "If you want something you never had, you have to do something you've never done!"], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 14:19:40.974355"], ["updated_at", "2019-01-23 14:19:40.974355"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Getting to know a problem is a bit like getting to know a person: it's a gradual process that requires patience, and there is no state of completion. You can never know the full of a problem, because there is never comprehensive information available. You have to simply draw the line somewhere and make up the rest as you go along."], ["author", "Frank Chimero"], ["category", "design"], ["created_at", "2019-01-23 14:19:40.975642"], ["updated_at", "2019-01-23 14:19:40.975642"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Others have seen what is and asked why. I have seen what could be and asked why not?"], ["author", "Pablo Picasso"], ["category", "design"], ["created_at", "2019-01-23 14:19:40.976935"], ["updated_at", "2019-01-23 14:19:40.976935"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Who are we, who is each one of us, if not a combinatoria of experiences, information, books we have read, things imagined?"], ["author", "Italo Calvino"], ["category", "literary"], ["created_at", "2019-01-23 14:19:40.978183"], ["updated_at", "2019-01-23 14:19:40.978183"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Who are only undefeated / Because we have gone on trying"], ["author", "T.S. Eliot"], ["category", "poetry"], ["created_at", "2019-01-23 14:19:40.979431"], ["updated_at", "2019-01-23 14:19:40.979431"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "In search of the difficulty rather than in its clutch. The disquiet of him who lacks an adversary."], ["author", "Samuel Beckett"], ["category", "literary"], ["created_at", "2019-01-23 14:19:40.980654"], ["updated_at", "2019-01-23 14:19:40.980654"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "When the going gets weird, the weird turn pro."], ["author", "Hunter S. Thompson"], ["category", "gonzo"], ["created_at", "2019-01-23 14:19:40.981866"], ["updated_at", "2019-01-23 14:19:40.981866"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Truth suffers from too much analysis."], ["author", "Frank Herbert"], ["category", "philosophical"], ["created_at", "2019-01-23 14:19:40.983136"], ["updated_at", "2019-01-23 14:19:40.983136"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Over and over again, a thousand voices shout: No Image! No Message!"], ["author", "Max Bruinsma"], ["category", "design"], ["created_at", "2019-01-23 14:19:40.984425"], ["updated_at", "2019-01-23 14:19:40.984425"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A circle looks at a square and sees a badly made circle."], ["author", "Jeff VanderMeer"], ["category", "design"], ["created_at", "2019-01-23 14:19:40.985620"], ["updated_at", "2019-01-23 14:19:40.985620"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The aspects of things that are most important for us are hidden because of their simplicity and familiarity."], ["author", "Ludwig Wittgenstein"], ["category", "philosophical"], ["created_at", "2019-01-23 14:19:40.986867"], ["updated_at", "2019-01-23 14:19:40.986867"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "All struggle is against impermanence."], ["author", "lord krunkington iii"], ["category", "philosophical"], ["created_at", "2019-01-23 14:19:40.988140"], ["updated_at", "2019-01-23 14:19:40.988140"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "All language is mystification, and everything is fiction."], ["author", "Brion Gysin"], ["category", "literary"], ["created_at", "2019-01-23 14:19:40.989354"], ["updated_at", "2019-01-23 14:19:40.989354"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.2ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A place where the unknown past and the emergent future meet in a vibrating soundless hum."], ["author", "William Burroughs"], ["category", "philosophical"], ["created_at", "2019-01-23 14:19:40.990605"], ["updated_at", "2019-01-23 14:19:40.990605"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A slow-fade into the silent, imperceptible, ceaseless procession of the stars."], ["author", "Fractalontology"], ["category", "poetry"], ["created_at", "2019-01-23 14:19:40.991744"], ["updated_at", "2019-01-23 14:19:40.991744"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Nodes, clusters, trackbacks, memes... truth follows bandwidth, as sure as use follows invention."], ["author", "Richard Powers"], ["category", "technology"], ["created_at", "2019-01-23 14:19:40.992891"], ["updated_at", "2019-01-23 14:19:40.992891"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The feeling that one is on the edge of many things: that there are many worlds from which we are separated by only a film; that a flick of the wrist, a turn of the body another way will bring us to a new world."], ["author", "Theodore Roethke"], ["category", "philosophical"], ["created_at", "2019-01-23 14:19:40.994074"], ["updated_at", "2019-01-23 14:19:40.994074"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:126
+  [1m[36mQuote Create (0.1ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Reality is as thin as paper and betrays with all its cracks its imitative character."], ["author", "Bruno Schulz"], ["category", "philosophical"], ["created_at", "2019-01-23 14:19:40.995218"], ["updated_at", "2019-01-23 14:19:40.995218"]]
+  ↳ db/seeds.rb:126
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:126
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 17:33:44 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/nadaabdulkarem/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+  Parameters: {"pokemon"=>{"name"=>"ros", "type1"=>"Fire", "type2"=>"", "hitpoints"=>39, "attack"=>52, "defense"=>43, "speed"=>65}, "quote"=>{}}
+Unpermitted parameters: :pokemon, :quote
+  [1m[36mQuote Load (0.4ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ app/controllers/quotes_controller.rb:6
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2019-01-23 17:33:52 +0300
+Processing by QuotesController#show as */*
+  Parameters: {"pokemon"=>{"name"=>"ros", "type1"=>"Fire", "type2"=>"", "hitpoints"=>39, "attack"=>52, "defense"=>43, "speed"=>65}, "id"=>"1", "quote"=>{}}
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_quotes' for #<QuotesController:0x00007fb02e18a1d8>
+Did you mean?  set_quote):
+  
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/quotes/1" for 127.0.0.1 at 2019-01-23 17:33:58 +0300
+Processing by QuotesController#show as */*
+  Parameters: {"pokemon"=>{"name"=>"ros", "type1"=>"Fire", "type2"=>"", "hitpoints"=>39, "attack"=>52, "defense"=>43, "speed"=>65}, "id"=>"1", "quote"=>{}}
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `set_quotes' for #<QuotesController:0x00007fb029337148>
+Did you mean?  set_quote):
+  
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/quotes/1" for 127.0.0.1 at 2019-01-23 17:34:36 +0300
+Processing by QuotesController#show as */*
+  Parameters: {"pokemon"=>{"name"=>"ros", "type1"=>"Fire", "type2"=>"", "hitpoints"=>39, "attack"=>52, "defense"=>43, "speed"=>65}, "id"=>"1", "quote"=>{}}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:30
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/quotes/3" for 127.0.0.1 at 2019-01-23 17:34:40 +0300
+Processing by QuotesController#show as */*
+  Parameters: {"pokemon"=>{"name"=>"ros", "type1"=>"Fire", "type2"=>"", "hitpoints"=>39, "attack"=>52, "defense"=>43, "speed"=>65}, "id"=>"3", "quote"=>{}}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:30
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/quotes" for 127.0.0.1 at 2019-01-23 17:35:52 +0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+"quote": {
+	"content": "be happy.",
+    "author": "nada",
+    "category": "life",
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+"quote": {
+	"content": "be happy.",
+    "author": "nada",
+    "category": "life",'):
+  
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch'
+rack (2.0.6) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/quotes" for 127.0.0.1 at 2019-01-23 17:36:00 +0300
+Processing by QuotesController#create as */*
+  Parameters: {"quote"=>{"content"=>"be happy.", "author"=>"nada", "category"=>"life"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/quotes_controller.rb:14
+  [1m[36mQuote Create (1.4ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "be happy."], ["author", "nada"], ["category", "life"], ["created_at", "2019-01-23 14:36:00.463118"], ["updated_at", "2019-01-23 14:36:00.463118"]]
+  ↳ app/controllers/quotes_controller.rb:14
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/quotes_controller.rb:14
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/quotes/24" for 127.0.0.1 at 2019-01-23 17:36:07 +0300
+Processing by QuotesController#show as */*
+  Parameters: {"quote"=>{"content"=>"be happy.", "author"=>"nada", "category"=>"life"}, "id"=>"24"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:30
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/quotes/24" for 127.0.0.1 at 2019-01-23 17:36:16 +0300
+Processing by QuotesController#update as */*
+  Parameters: {"quote"=>{"content"=>"be happyyyyyyyy.", "author"=>"nada", "category"=>"life"}, "id"=>"24"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/quotes_controller.rb:19
+  [1m[36mQuote Update (0.2ms)[0m  [1m[33mUPDATE "quotes" SET "content" = $1, "updated_at" = $2 WHERE "quotes"."id" = $3[0m  [["content", "be happyyyyyyyy."], ["updated_at", "2019-01-23 14:36:16.702902"], ["id", 24]]
+  ↳ app/controllers/quotes_controller.rb:19
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/quotes_controller.rb:19
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/quotes/24" for 127.0.0.1 at 2019-01-23 17:36:19 +0300
+Processing by QuotesController#show as */*
+  Parameters: {"quote"=>{"content"=>"be happyyyyyyyy.", "author"=>"nada", "category"=>"life"}, "id"=>"24"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:30
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 17:36:24 +0300
+Processing by QuotesController#index as */*
+  Parameters: {"quote"=>{"content"=>"be happyyyyyyyy.", "author"=>"nada", "category"=>"life"}}
+Unpermitted parameter: :quote
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ app/controllers/quotes_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/quotes/24" for 127.0.0.1 at 2019-01-23 17:36:34 +0300
+Processing by QuotesController#destroy as */*
+  Parameters: {"quote"=>{"content"=>"be happyyyyyyyy.", "author"=>"nada", "category"=>"life"}, "id"=>"24"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/quotes_controller.rb:24
+  [1m[36mQuote Destroy (0.2ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 24]]
+  ↳ app/controllers/quotes_controller.rb:24
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/quotes_controller.rb:24
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/quotes/24" for 127.0.0.1 at 2019-01-23 17:36:38 +0300
+Processing by QuotesController#show as */*
+  Parameters: {"quote"=>{"content"=>"be happyyyyyyyy.", "author"=>"nada", "category"=>"life"}, "id"=>"24"}
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:30
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Quote with 'id'=24):
+  
+app/controllers/quotes_controller.rb:30:in `set_quote'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 17:36:39 +0300
+Processing by QuotesController#index as */*
+  Parameters: {"quote"=>{"content"=>"be happyyyyyyyy.", "author"=>"nada", "category"=>"life"}}
+Unpermitted parameter: :quote
+  [1m[36mQuote Load (0.2ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ app/controllers/quotes_controller.rb:6
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
