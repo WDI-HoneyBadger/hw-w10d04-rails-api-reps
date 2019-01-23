@@ -1,4 +1,4 @@
-class QuoteController < ApplicationController
+class QuotesController < ApplicationController
     before_action :set_quote, only: [:show, :update, :destroy]
     def index
         @quote = Quote.where(quote_query_params)
