@@ -1,0 +1,755 @@
+  [1m[35m (764.5ms)[0m  [1m[35mCREATE DATABASE "quotes_api_development" ENCODING = 'unicode'[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (505.1ms)[0m  [1m[35mCREATE DATABASE "quotes_api_test" ENCODING = 'unicode'[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (229.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (28.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2072838696152715120)[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateQuotes (20190123142429)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (53.8ms)[0m  [1m[35mCREATE TABLE "quotes" ("id" bigserial primary key, "content" character varying, "string" character varying, "author" character varying, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190123142429_create_quotes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190123142429"]]
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-23 14:27:31.515187"], ["updated_at", "2019-01-23 14:27:31.515187"]]
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2072838696152715120)[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mQuote Load (30.9ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ db/seeds.rb:8
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:13:03 +0300
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+  Parameters: {"pokemon"=>{"name"=>"Rosco", "type1"=>"Earth", "attack"=>500, "defense"=>600, "speed"=>1001, "hitpoints"=>80000, "legendary"=>true}, "quote"=>{}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 6.2ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:4:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:15:57 +0300
+Processing by QuotesController#index as */*
+  Parameters: {"pokemon"=>{"name"=>"Rosco", "type1"=>"Earth", "attack"=>500, "defense"=>600, "speed"=>1001, "hitpoints"=>80000, "legendary"=>true}, "quote"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 5.6ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:4:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:17:52 +0300
+Processing by QuotesController#index as */*
+  Parameters: {"pokemon"=>{"name"=>"Rosco", "type1"=>"Earth", "attack"=>500, "defense"=>600, "speed"=>1001, "hitpoints"=>80000, "legendary"=>true}, "quote"=>{}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:4:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:21:26 +0300
+Processing by QuotesController#index as */*
+  Parameters: {"pokemon"=>{"name"=>"Rosco", "type1"=>"Earth", "attack"=>500, "defense"=>600, "speed"=>1001, "hitpoints"=>80000, "legendary"=>true}, "quote"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 4.2ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:4:in `index'
+Started GET "/" for 127.0.0.1 at 2019-01-23 22:23:06 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as */*
+  Parameters: {"pokemon"=>{"name"=>"Rosco", "type1"=>"Earth", "attack"=>500, "defense"=>600, "speed"=>1001, "hitpoints"=>80000, "legendary"=>true}, "welcome"=>{"pokemon"=>{"name"=>"Rosco", "type1"=>"Earth", "attack"=>500, "defense"=>600, "speed"=>1001, "hitpoints"=>80000, "legendary"=>true}}}
+  Rendering /Users/macuser/.rvm/gems/ruby-2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/macuser/.rvm/gems/ruby-2.6.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (9.5ms)
+Completed 200 OK in 57ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:23:39 +0300
+Processing by QuotesController#index as */*
+  Parameters: {"pokemon"=>{"name"=>"Rosco", "type1"=>"Earth", "attack"=>500, "defense"=>600, "speed"=>1001, "hitpoints"=>80000, "legendary"=>true}, "quote"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 18.9ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:4:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:27:45 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+  Parameters: {"pokemon"=>{"name"=>"Rosco", "type1"=>"Earth", "attack"=>500, "defense"=>600, "speed"=>1001, "hitpoints"=>80000, "legendary"=>true}, "quote"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 9.2ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:4:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:29:46 +0300
+Processing by QuotesController#index as */*
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:4:in `index'
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2072838696152715120)[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (3.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (41.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2072838696152715120)[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:31:11 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:4:in `index'
+Started GET "/quotes/5" for 127.0.0.1 at 2019-01-23 22:32:45 +0300
+  
+ActionController::RoutingError (uninitialized constant QoutesController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:34:07 +0300
+  
+ActionController::RoutingError (uninitialized constant QuotesController):
+  
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:8:in `without_bootsnap_cache'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:74:in `rescue in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:56:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:283:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:46:in `controller'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:35:02 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:5:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 22:39:48 +0300
+Processing by QuotesController#index as */*
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:5:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 23:03:06 +0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:5:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 23:04:55 +0300
+Processing by QuotesController#index as */*
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant QuotesController::Quote_query_params):
+  
+app/controllers/quotes_controller.rb:5:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 23:10:58 +0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+Completed 400 Bad Request in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: quote):
+  
+app/controllers/quotes_controller.rb:33:in `quote_params'
+app/controllers/quotes_controller.rb:5:in `index'
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 23:19:13 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+  [1m[36mQuote Load (0.9ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ app/controllers/quotes_controller.rb:6
+Completed 200 OK in 14ms (Views: 2.5ms | ActiveRecord: 3.9ms)
+
+
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE DATABASE "quotes_api_development" ENCODING = 'unicode'[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "quotes_api_test" ENCODING = 'unicode'[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mQuote Load (0.9ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (9.0ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Sometimes you win, sometimes you learn."], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 20:22:05.639335"], ["updated_at", "2019-01-23 20:22:05.639335"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.9ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Do or do not, there is no try."], ["author", "Yoda"], ["category", "motivational"], ["created_at", "2019-01-23 20:22:05.655785"], ["updated_at", "2019-01-23 20:22:05.655785"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A simple 'Hello' could lead to a million things."], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 20:22:05.662337"], ["updated_at", "2019-01-23 20:22:05.662337"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The expert at anything was once a beginner."], ["author", "Helen Hayes"], ["category", "education"], ["created_at", "2019-01-23 20:22:05.667555"], ["updated_at", "2019-01-23 20:22:05.667555"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "You are never too old to get a new goal or dream a new dream!"], ["author", "CS Lewis"], ["category", "motivational"], ["created_at", "2019-01-23 20:22:05.672330"], ["updated_at", "2019-01-23 20:22:05.672330"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.7ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "If you want something you never had, you have to do something you've never done!"], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 20:22:05.677242"], ["updated_at", "2019-01-23 20:22:05.677242"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Getting to know a problem is a bit like getting to know a person: it's a gradual process that requires patience, and there is no state of completion. You can never know the full of a problem, because there is never comprehensive information available. You have to simply draw the line somewhere and make up the rest as you go along."], ["author", "Frank Chimero"], ["category", "design"], ["created_at", "2019-01-23 20:22:05.682215"], ["updated_at", "2019-01-23 20:22:05.682215"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Others have seen what is and asked why. I have seen what could be and asked why not?"], ["author", "Pablo Picasso"], ["category", "design"], ["created_at", "2019-01-23 20:22:05.687158"], ["updated_at", "2019-01-23 20:22:05.687158"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Who are we, who is each one of us, if not a combinatoria of experiences, information, books we have read, things imagined?"], ["author", "Italo Calvino"], ["category", "literary"], ["created_at", "2019-01-23 20:22:05.692572"], ["updated_at", "2019-01-23 20:22:05.692572"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Who are only undefeated / Because we have gone on trying"], ["author", "T.S. Eliot"], ["category", "poetry"], ["created_at", "2019-01-23 20:22:05.697890"], ["updated_at", "2019-01-23 20:22:05.697890"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "In search of the difficulty rather than in its clutch. The disquiet of him who lacks an adversary."], ["author", "Samuel Beckett"], ["category", "literary"], ["created_at", "2019-01-23 20:22:05.702918"], ["updated_at", "2019-01-23 20:22:05.702918"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.7ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "When the going gets weird, the weird turn pro."], ["author", "Hunter S. Thompson"], ["category", "gonzo"], ["created_at", "2019-01-23 20:22:05.708218"], ["updated_at", "2019-01-23 20:22:05.708218"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Truth suffers from too much analysis."], ["author", "Frank Herbert"], ["category", "philosophical"], ["created_at", "2019-01-23 20:22:05.713722"], ["updated_at", "2019-01-23 20:22:05.713722"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Over and over again, a thousand voices shout: No Image! No Message!"], ["author", "Max Bruinsma"], ["category", "design"], ["created_at", "2019-01-23 20:22:05.718731"], ["updated_at", "2019-01-23 20:22:05.718731"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A circle looks at a square and sees a badly made circle."], ["author", "Jeff VanderMeer"], ["category", "design"], ["created_at", "2019-01-23 20:22:05.723467"], ["updated_at", "2019-01-23 20:22:05.723467"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The aspects of things that are most important for us are hidden because of their simplicity and familiarity."], ["author", "Ludwig Wittgenstein"], ["category", "philosophical"], ["created_at", "2019-01-23 20:22:05.728458"], ["updated_at", "2019-01-23 20:22:05.728458"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "All struggle is against impermanence."], ["author", "lord krunkington iii"], ["category", "philosophical"], ["created_at", "2019-01-23 20:22:05.733516"], ["updated_at", "2019-01-23 20:22:05.733516"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "All language is mystification, and everything is fiction."], ["author", "Brion Gysin"], ["category", "literary"], ["created_at", "2019-01-23 20:22:05.738949"], ["updated_at", "2019-01-23 20:22:05.738949"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A place where the unknown past and the emergent future meet in a vibrating soundless hum."], ["author", "William Burroughs"], ["category", "philosophical"], ["created_at", "2019-01-23 20:22:05.743943"], ["updated_at", "2019-01-23 20:22:05.743943"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.7ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A slow-fade into the silent, imperceptible, ceaseless procession of the stars."], ["author", "Fractalontology"], ["category", "poetry"], ["created_at", "2019-01-23 20:22:05.748983"], ["updated_at", "2019-01-23 20:22:05.748983"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Nodes, clusters, trackbacks, memes... truth follows bandwidth, as sure as use follows invention."], ["author", "Richard Powers"], ["category", "technology"], ["created_at", "2019-01-23 20:22:05.754740"], ["updated_at", "2019-01-23 20:22:05.754740"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The feeling that one is on the edge of many things: that there are many worlds from which we are separated by only a film; that a flick of the wrist, a turn of the body another way will bring us to a new world."], ["author", "Theodore Roethke"], ["category", "philosophical"], ["created_at", "2019-01-23 20:22:05.759548"], ["updated_at", "2019-01-23 20:22:05.759548"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Reality is as thin as paper and betrays with all its cracks its imitative character."], ["author", "Bruno Schulz"], ["category", "philosophical"], ["created_at", "2019-01-23 20:22:05.764318"], ["updated_at", "2019-01-23 20:22:05.764318"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2072838696152715120)[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2072838696152715120)[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mQuote Load (1.1ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (3.0ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.6ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.6ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.4ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:8
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.7ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 20]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.5ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 21]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.6ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 22]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mQuote Destroy (0.7ms)[0m  [1m[31mDELETE FROM "quotes" WHERE "quotes"."id" = $1[0m  [["id", 23]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.9ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Sometimes you win, sometimes you learn."], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 20:23:43.074414"], ["updated_at", "2019-01-23 20:23:43.074414"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Do or do not, there is no try."], ["author", "Yoda"], ["category", "motivational"], ["created_at", "2019-01-23 20:23:43.080159"], ["updated_at", "2019-01-23 20:23:43.080159"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.7ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A simple 'Hello' could lead to a million things."], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 20:23:43.085213"], ["updated_at", "2019-01-23 20:23:43.085213"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The expert at anything was once a beginner."], ["author", "Helen Hayes"], ["category", "education"], ["created_at", "2019-01-23 20:23:43.089948"], ["updated_at", "2019-01-23 20:23:43.089948"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "You are never too old to get a new goal or dream a new dream!"], ["author", "CS Lewis"], ["category", "motivational"], ["created_at", "2019-01-23 20:23:43.095295"], ["updated_at", "2019-01-23 20:23:43.095295"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "If you want something you never had, you have to do something you've never done!"], ["author", "Unknown"], ["category", "motivational"], ["created_at", "2019-01-23 20:23:43.100946"], ["updated_at", "2019-01-23 20:23:43.100946"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Getting to know a problem is a bit like getting to know a person: it's a gradual process that requires patience, and there is no state of completion. You can never know the full of a problem, because there is never comprehensive information available. You have to simply draw the line somewhere and make up the rest as you go along."], ["author", "Frank Chimero"], ["category", "design"], ["created_at", "2019-01-23 20:23:43.105931"], ["updated_at", "2019-01-23 20:23:43.105931"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.7ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Others have seen what is and asked why. I have seen what could be and asked why not?"], ["author", "Pablo Picasso"], ["category", "design"], ["created_at", "2019-01-23 20:23:43.110795"], ["updated_at", "2019-01-23 20:23:43.110795"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Who are we, who is each one of us, if not a combinatoria of experiences, information, books we have read, things imagined?"], ["author", "Italo Calvino"], ["category", "literary"], ["created_at", "2019-01-23 20:23:43.115855"], ["updated_at", "2019-01-23 20:23:43.115855"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Who are only undefeated / Because we have gone on trying"], ["author", "T.S. Eliot"], ["category", "poetry"], ["created_at", "2019-01-23 20:23:43.120946"], ["updated_at", "2019-01-23 20:23:43.120946"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "In search of the difficulty rather than in its clutch. The disquiet of him who lacks an adversary."], ["author", "Samuel Beckett"], ["category", "literary"], ["created_at", "2019-01-23 20:23:43.125827"], ["updated_at", "2019-01-23 20:23:43.125827"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "When the going gets weird, the weird turn pro."], ["author", "Hunter S. Thompson"], ["category", "gonzo"], ["created_at", "2019-01-23 20:23:43.130760"], ["updated_at", "2019-01-23 20:23:43.130760"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.7ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Truth suffers from too much analysis."], ["author", "Frank Herbert"], ["category", "philosophical"], ["created_at", "2019-01-23 20:23:43.135477"], ["updated_at", "2019-01-23 20:23:43.135477"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.7ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Over and over again, a thousand voices shout: No Image! No Message!"], ["author", "Max Bruinsma"], ["category", "design"], ["created_at", "2019-01-23 20:23:43.140460"], ["updated_at", "2019-01-23 20:23:43.140460"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A circle looks at a square and sees a badly made circle."], ["author", "Jeff VanderMeer"], ["category", "design"], ["created_at", "2019-01-23 20:23:43.145348"], ["updated_at", "2019-01-23 20:23:43.145348"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The aspects of things that are most important for us are hidden because of their simplicity and familiarity."], ["author", "Ludwig Wittgenstein"], ["category", "philosophical"], ["created_at", "2019-01-23 20:23:43.150847"], ["updated_at", "2019-01-23 20:23:43.150847"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "All struggle is against impermanence."], ["author", "lord krunkington iii"], ["category", "philosophical"], ["created_at", "2019-01-23 20:23:43.155540"], ["updated_at", "2019-01-23 20:23:43.155540"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "All language is mystification, and everything is fiction."], ["author", "Brion Gysin"], ["category", "literary"], ["created_at", "2019-01-23 20:23:43.160566"], ["updated_at", "2019-01-23 20:23:43.160566"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A place where the unknown past and the emergent future meet in a vibrating soundless hum."], ["author", "William Burroughs"], ["category", "philosophical"], ["created_at", "2019-01-23 20:23:43.165565"], ["updated_at", "2019-01-23 20:23:43.165565"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "A slow-fade into the silent, imperceptible, ceaseless procession of the stars."], ["author", "Fractalontology"], ["category", "poetry"], ["created_at", "2019-01-23 20:23:43.170634"], ["updated_at", "2019-01-23 20:23:43.170634"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.5ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Nodes, clusters, trackbacks, memes... truth follows bandwidth, as sure as use follows invention."], ["author", "Richard Powers"], ["category", "technology"], ["created_at", "2019-01-23 20:23:43.175274"], ["updated_at", "2019-01-23 20:23:43.175274"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.7ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "The feeling that one is on the edge of many things: that there are many worlds from which we are separated by only a film; that a flick of the wrist, a turn of the body another way will bring us to a new world."], ["author", "Theodore Roethke"], ["category", "philosophical"], ["created_at", "2019-01-23 20:23:43.180505"], ["updated_at", "2019-01-23 20:23:43.180505"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:128
+  [1m[36mQuote Create (0.6ms)[0m  [1m[32mINSERT INTO "quotes" ("content", "author", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "Reality is as thin as paper and betrays with all its cracks its imitative character."], ["author", "Bruno Schulz"], ["category", "philosophical"], ["created_at", "2019-01-23 20:23:43.185567"], ["updated_at", "2019-01-23 20:23:43.185567"]]
+  ↳ db/seeds.rb:128
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:128
+Started GET "/quotes" for 127.0.0.1 at 2019-01-23 23:24:01 +0300
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/macuser/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as */*
+  [1m[36mQuote Load (3.0ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ app/controllers/quotes_controller.rb:6
+Completed 200 OK in 60ms (Views: 38.2ms | ActiveRecord: 17.8ms)
+
+
