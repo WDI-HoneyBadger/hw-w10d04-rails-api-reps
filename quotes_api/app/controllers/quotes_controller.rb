@@ -12,13 +12,13 @@ class QuotesController < ApplicationController
     end
 
     def create
-        @quote = Quote.create(pokemon_params)
+        @quote = Quote.create(quote_params)
         render json: @quote
     end
 
     def update 
         
-        @quote.update_attributes(pokemon_params)
+        @quote.update_attributes(quote_params)
         render json: @quote
     end
 

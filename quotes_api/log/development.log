@@ -269,3 +269,32 @@ Processing by QuotesController#destroy as */*
 Completed 200 OK in 45ms (Views: 0.2ms | ActiveRecord: 42.0ms)
 
 
+Started GET "/quotes" for 127.0.0.1 at 2019-01-24 09:54:52 +0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mac/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by QuotesController#index as HTML
+  [1m[36mQuote Load (63.3ms)[0m  [1m[34mSELECT "quotes".* FROM "quotes"[0m
+  ↳ app/controllers/quotes_controller.rb:6
+Completed 200 OK in 131ms (Views: 29.8ms | ActiveRecord: 79.6ms)
+
+
+Started GET "/quotes/1" for 127.0.0.1 at 2019-01-24 09:54:57 +0300
+Processing by QuotesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuote Load (0.3ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:39
+Completed 404 Not Found in 69ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Quote with 'id'=1):
+  
+app/controllers/quotes_controller.rb:39:in `set_quote'
+Started GET "/quotes/2" for 127.0.0.1 at 2019-01-24 09:55:07 +0300
+Processing by QuotesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuote Load (2.2ms)[0m  [1m[34mSELECT  "quotes".* FROM "quotes" WHERE "quotes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/quotes_controller.rb:39
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 2.2ms)
+
+
